@@ -77,7 +77,7 @@ subscriptions _ =
 
 view : Model -> Browser.Document Msg
 view model =
-  { title = "URL Interceptor"
+  { title = "Collaboration App"
   , body =
       [ viewContainer model
       ]
