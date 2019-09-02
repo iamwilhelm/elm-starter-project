@@ -35,6 +35,9 @@ module.exports = {
           debug: true
         }
       }
-    }],
+    }, {
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
+    } ],
   }
 };
