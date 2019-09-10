@@ -6,6 +6,8 @@ import Url
 import Array exposing (Array)
 import Debug exposing (toString, log)
 
+import Datalog
+
 
 -- MAIN
 
