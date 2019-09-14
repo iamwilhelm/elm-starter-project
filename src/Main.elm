@@ -157,7 +157,8 @@ viewContainer model =
     div [ class "row" ] [
       div [ class "col-6" ] [
         h3 [] [ text "database" ]
-      , viewDatabase model.database
+      , div [ id "eve-wrapper" ] []
+      -- , viewDatabase model.database
       ],
       div [class "col-6"] [
         h3 [] [ text "code" ],
