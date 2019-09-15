@@ -21,11 +21,27 @@ let htmlWatcher = program.attach("html")
 // `)
 
 
-// program.bind("Unconditional test div", function({ record }) {
-//   return [
-//     record("html/element", "unconditional", {tagname: "div", text: "Unconditional test div"})
-//   ];
-// });
+program.commit("Initialize records", function(eve) {
+  let { find, record } = eve
+  console.log("initialized records")
+  return [
+    record("actor", { name: "Elenor Shelstrop", age: 34, hair: "blonde", eyes: "blue" })
+  , record("actor", { name: "Chidi Anagonye", age: 35, hair: "block", eyes: "brown" })
+  ];
+});
+
+program.bind("Display records in table", function(eve) {
+  let { find, record } = eve
+  let actor = find("actor")
+  let my_root = find("my-root")
+  console.log("records", actor)
+  console.log("record name", actor.name)
+  return [
+    my_root.add("children", [
+      record("html/element", "", { tagname: "div", text: `Hello ${actor.name}`})
+    ])
+  ]
+})
 
 program.bind("render into #eve-wrapper", function(eve) {
   let { find, record } = eve

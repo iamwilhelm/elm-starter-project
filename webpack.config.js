@@ -40,6 +40,7 @@ module.exports = {
       use: ['style-loader', 'css-loader']
     } ],
   },
+  // @dev needed to include this, to include d-eng
   node: {
     fs: "empty"
   }
